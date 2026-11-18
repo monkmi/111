@@ -1,0 +1,17 @@
+{
+  "board_type": "dots",
+  "dot_rows": 3,
+  "dot_cols": 3,
+  "dot_spacing": 0.04,
+  "dot_missing": "0,0",
+  "dot_radius": 0.008,
+  "n_dots": 8,
+  "board_size_m": [
+    0.16,
+    0.16
+  ],
+  "dark_on_light": true,
+  "dpi": 300.0,
+  "print_scale": "100%",
+  "note": "dot_spacing 为相邻圆点中心距；dot_missing 为不打印的格位，如 \"0,0;2,2\"（行,列）"
+}

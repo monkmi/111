@@ -1,0 +1,28 @@
+# ChArUco 标定板配置（推荐：唯一识别、无 180°/镜像二义性）
+# 启动: ros2 launch board_pose_ros board_pose.launch.py params_file:=<此文件>
+/board_pose:
+  ros__parameters:
+    board_type: charuco
+    # ---- 话题 ----
+    image_topic: /camera/camera/color/image_raw
+    camera_info_topic: /camera/camera/color/camera_info
+    pose_topic: /aruco_single/pose
+    status_topic: /board_pose/status
+    debug_topic: /board_pose/debug
+    publish_debug_image: true
+    publish_tf: true
+    tf_child: aruco_marker_frame
+    output_frame: ""            # 空 = 相机坐标系；填 base_link 则输出到 base_link
+    # ---- 内参：留空则用 camera_info；填文件则覆盖（自己标定后用这个） ----
+    intrinsics_file: ""
+    # ---- 处理 ----
+    process_rate_hz: 10.0       # 0 = 每帧都处理
+    max_reproj_err: 3.0         # 重投影 RMS 超过该值就丢弃该帧
+    min_points: 8
+    axis_length: 0.03           # 调试图坐标轴长度 (m)
+    # ---- 板参数（必须与打印出来的实物一致，单位：米） ----
+    dictionary: DICT_4X4_50
+    squares_x: 5                # 横向方格数
+    squares_y: 7                # 纵向方格数
+    square_length: 0.03         # 方格边长 30mm
+    marker_length: 0.022        # 内部 ArUco 码边长 22mm

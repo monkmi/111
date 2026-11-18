@@ -1,0 +1,16 @@
+{
+  "board_type": "charuco",
+  "dictionary": "DICT_4X4_50",
+  "squares_x": 5,
+  "squares_y": 7,
+  "square_length": 0.03,
+  "marker_length": 0.022,
+  "board_size_m": [
+    0.15,
+    0.21
+  ],
+  "n_markers": 17,
+  "dpi": 300.0,
+  "print_scale": "100%",
+  "note": "square_length 为方格边长，marker_length 为内部 ArUco 码边长（同一单位：米）"
+}

@@ -1,0 +1,25 @@
+# 用户当前实物板：7×9 格，方格 24mm，码边长 15mm，DICT_5X5_250。
+# 启动：ros2 launch board_pose_ros board_pose.launch.py params_file:=<此文件绝对路径>
+# 该板行数为奇数，当前 OpenCV 4.5.4 布局与参考配置 legacy_pattern:false 一致。
+/board_pose:
+  ros__parameters:
+    board_type: charuco
+    dictionary: DICT_5X5_250
+    squares_x: 7
+    squares_y: 9
+    square_length: 0.024
+    marker_length: 0.015
+    min_points: 9
+    max_reproj_err: 1.0
+    image_topic: /camera/camera/color/image_raw
+    camera_info_topic: /camera/camera/color/camera_info
+    pose_topic: /aruco_single/pose
+    status_topic: /board_pose/status
+    debug_topic: /board_pose/debug
+    output_frame: ""
+    intrinsics_file: ""
+    process_rate_hz: 10.0
+    publish_debug_image: true
+    publish_tf: true
+    tf_child: aruco_marker_frame
+    axis_length: 0.03

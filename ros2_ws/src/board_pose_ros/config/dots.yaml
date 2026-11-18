@@ -1,0 +1,30 @@
+# 圆点阵列板（“八点板”）：黑色圆点 + 无编码，靠网格布局唯一确定朝向
+# 启动: ros2 launch board_pose_ros board_pose.launch.py params_file:=<此文件>
+/board_pose:
+  ros__parameters:
+    board_type: dots
+    image_topic: /camera/camera/color/image_raw
+    camera_info_topic: /camera/camera/color/camera_info
+    pose_topic: /aruco_single/pose
+    status_topic: /board_pose/status
+    debug_topic: /board_pose/debug
+    publish_debug_image: true
+    publish_tf: true
+    tf_child: aruco_marker_frame
+    output_frame: ""
+    intrinsics_file: ""
+    process_rate_hz: 10.0
+    max_reproj_err: 3.0
+    min_points: 6
+    axis_length: 0.03
+    # ---- 圆点板参数 ----
+    dot_rows: 3                 # 网格行数（第一行为 y 最大的一行）
+    dot_cols: 3                 # 网格列数
+    dot_spacing: 0.04           # 相邻圆点中心距 40mm
+    dot_missing: "0,0"          # 不打印的格位 "行,列"，多格用分号: "0,0;2,2"
+    dot_dark_on_light: true     # 黑点白底；若打印白点黑底则改成 false
+    dot_min_area_frac: 0.00015  # 圆点最小面积（占画面比例）
+    dot_max_area_frac: 0.02
+    dot_min_circularity: 0.55   # 4*pi*A/P^2
+    dot_min_fill: 0.55          # 面积 / 最小外接圆面积
+    dot_blur_ksize: 5

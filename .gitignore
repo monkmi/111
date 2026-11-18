@@ -1,0 +1,24 @@
+# ---------- ROS 2 构建产物 ----------
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# ---------- 标定 / 验证产物（截图、报告，体积大，不入库） ----------
+ros2_ws/result/
+
+# ---------- 第三方上游仓库（克隆后自行拉取，见 README） ----------
+ros2_ws/src/agx_arm_ros/
+ros2_ws/src/handeye_calibration_ros/
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+
+# ---------- 编辑器 / 系统 ----------
+.vscode/
+.idea/
+*.swp
+.DS_Store

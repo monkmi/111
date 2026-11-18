@@ -1,0 +1,23 @@
+# 棋盘格（备用）：OpenCV 要求内角点 cols>2 且 rows>2；图案本身有 180° 自相似性，
+# 节点用“上一帧位姿”保持多帧一致，但仍建议优先用 ChArUco。
+/board_pose:
+  ros__parameters:
+    board_type: checker
+    image_topic: /camera/camera/color/image_raw
+    camera_info_topic: /camera/camera/color/camera_info
+    pose_topic: /aruco_single/pose
+    status_topic: /board_pose/status
+    debug_topic: /board_pose/debug
+    publish_debug_image: true
+    publish_tf: true
+    tf_child: aruco_marker_frame
+    output_frame: ""
+    intrinsics_file: ""
+    process_rate_hz: 10.0
+    max_reproj_err: 3.0
+    min_points: 9
+    axis_length: 0.03
+    # ---- 棋盘格参数（内角点数，不是方格数） ----
+    checker_cols: 5
+    checker_rows: 3
+    checker_square_length: 0.02
